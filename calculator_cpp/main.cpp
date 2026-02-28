@@ -21,6 +21,9 @@ int y, z;
 
 int main() {
 
+    std::cout << "  Calculator" << std::endl;
+    std::cout << "---------------" << std::endl;
+
     std::cout << "Pick a number: " << std::endl;
     std::cout << "1. ADD" << std::endl;
     std::cout << "2. SUBSTRACT" << std::endl;

@@ -27,7 +27,6 @@ int main() {
         password.push_back(password_list[indx]);
     }
 
-
     std::cout << "Generated password: " << password << std::endl;
 
     return 0;

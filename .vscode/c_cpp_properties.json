@@ -3,7 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/usr/include/boost/predef/os"
             ],
             "defines": [],
             "compilerPath": "/usr/sbin/gcc",

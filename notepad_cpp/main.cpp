@@ -6,9 +6,9 @@
 int main() {
     
     std::vector<std::string> notes;
-    bool isFalse = false;
+
     int choice;
-    while (!isFalse) {
+    while (true) {
         std::cout << std::endl;
         std::cout << "-------------------" << std::endl;
         std::cout << "1. Add note " << std::endl;
@@ -19,11 +19,12 @@ int main() {
         std::cout << "-------------------" << std::endl;
 
         std::cout << std::endl << "Pick an option:" << std::endl;
+        
+        int counter = 0;
+        std::string note;
         std::cin >> choice;
         std::cin.ignore();
 
-        int counter = 0;
-        std::string note;
         if (choice == 1) {
             std::cout << std::endl << "Make a note: " << std::endl;
             std::getline(std::cin, note);
@@ -70,14 +71,25 @@ int main() {
             std::cin.ignore();
 
             if (index > 0 && index <= notes.size()) {
-                notes[index - 1].clear();
+                notes.erase(notes.begin() + (index - 1));
             }
 
         } else if (choice == 5) {
+            std::cout << std::endl << "Good bye!" << std::endl;
             break;
         } else {
-            std::cout << "Pick only available number" << std::endl;
-            isFalse = true;
+
+            if (std::cin.fail()) {
+                std::cout << std::endl << "That's not a number" << std::endl;
+
+                std::cin.clear();
+                std::cin.ignore(1000, '\n');
+
+                continue;
+            }
+
+            std::cout << std::endl << "Pick only available number" << std::endl;
+            continue;
         }
     }
     return 0;
